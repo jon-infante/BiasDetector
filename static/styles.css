@@ -3,7 +3,7 @@ body, html {
 }
 
 .bg {
-  background-image: image-url("mountain.jpg");
+  background-image: url("https://www.wallpaperflare.com/static/416/577/210/mountains-minimalism-white-blue-wallpaper.jpg");
 
   height: 100%;
 
