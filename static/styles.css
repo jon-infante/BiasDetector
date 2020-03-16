@@ -25,7 +25,18 @@ body, html {
 }
 
 .home-text {
-    color: grey !important;
-    font-size: 40px;
+    color: grey;
+    font-size: 50px;
     font-family: "Courier New", monospace;
+    font-weight: bold;
+    max-width: 700px;
+    top: 150px;
+}
+
+.home-text2 {
+    color: grey;
+    font-size: 28px;
+    font-family: "Courier New", monospace;
+    max-width: 700px;
+    top: 150px;
 }
