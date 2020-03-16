@@ -3,13 +3,13 @@ body, html {
 }
 
 .bg {
-  background-image: url("https://www.wallpaperflare.com/static/416/577/210/mountains-minimalism-white-blue-wallpaper.jpg");
+    background-color: lightblue;
 
-  height: 100%;
+    height: 100%;
 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .navbar-brand {
