@@ -3,7 +3,7 @@ body, html {
 }
 
 .bg {
-  background-image: url("mountain.jpg");
+  background-image: image-url("mountain.jpg");
 
   height: 100%;
 
