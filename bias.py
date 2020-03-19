@@ -35,7 +35,7 @@ classes_Bias = np.asarray([1 for i in range(len(n_s_breitbart))] + \
 
 X_train, X_test, y_train, y_test = train_test_split(n_s, classes_Bias, test_size=0.2)
 
-
+#Training model
 pipeline = Pipeline([('vect', TfidfVectorizer(ngram_range=(1, 2), stop_words="english", sublinear_tf=True)),
                      ('chi',  SelectKBest(chi2, k=10000)),
                      ('clf', LinearSVC(C=1.0, penalty='l1', max_iter=3000, dual=False))])
