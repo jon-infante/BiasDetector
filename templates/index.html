@@ -1,5 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div class="bg"></div>
+  <div class="bg">
+      {% include 'partials/navbar.html' %}
+    <div class="row">
+        <div class="col-5"></div>
+        <div class="col-8 home-text">
+            Start detecting bias on the internet today!
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5"></div>
+        <div class="col-8 home-text2">
+            Click to get started</br>
+            <a href="/detector" class="btn btn-secondary" role="button" aria-pressed="true">Get Started</a>
+
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -1,12 +1,42 @@
 body, html {
   height: 100%;
 }
+
 .bg {
-  background-image: url("mountain.jpg");
+    background-color: lightblue;
 
-  height: 100%;
+    height: 100%;
 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar-brand {
+    color: grey !important;
+    font-size: 50px;
+    font-family: "Courier New", monospace;
+}
+
+.nav-link {
+    color: grey !important;
+    font-size: 30px;
+    font-family: "Courier New", monospace;
+}
+
+.home-text {
+    color: grey;
+    font-size: 50px;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    max-width: 700px;
+    top: 150px;
+}
+
+.home-text2 {
+    color: grey;
+    font-size: 28px;
+    font-family: "Courier New", monospace;
+    max-width: 700px;
+    top: 150px;
 }
