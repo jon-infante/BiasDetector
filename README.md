@@ -1,4 +1,6 @@
-Dates 3/16-3/25
+# **Spring Intensive Proposal**
+
+ates 3/16-3/25
 
 **My Name: Jon Infante**
 
