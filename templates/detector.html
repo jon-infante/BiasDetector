@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{{ bias_prediction }} 
+    {% include 'partials/navbar.html' %}
+    {{ bias_prediction }}
 {% endblock %}
