@@ -9,15 +9,21 @@ def index():
     """Return homepage."""
     return render_template('index.html')
 
-@app.route('/detector')
+@app.route('/detector', methods=['GET', 'POST'])
 def detector():
     """Return bias detector page."""
     with open('env/bias_model.pkl', 'rb') as file:
         bias_model = pickle.load(file)
 
-    bias = bias_model.predict(['I love Donald Trump, building the border is the best thing we could have done. I also love capitalism too.'])
+    if 'bias_text' in request.form:
+        bias_text = request.form['bias_text']
+        textbox = request.form['bias_text']
+        bias = bias_model.predict([bias_text])
+    else:
+        bias = ' '
+        textbox = 'Your text here'
 
-    return render_template('detector.html', bias_prediction=bias)
+    return render_template('detector.html', bias_prediction=bias, textbox=textbox)
 
 @app.route('/about')
 def about():

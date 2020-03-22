@@ -2,5 +2,24 @@
 
 {% block content %}
     {% include 'partials/navbar.html' %}
-    {{ bias_prediction }}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="home-text2">
+                    Enter text below to determine the political bias.
+                </div>
+                <form action="/detector"  method="post">
+                    <textarea id="bias_text" name="bias_text" rows="20" cols="80">{{textbox}}</textarea>
+                    <br><br>
+            </div>
+                <div class="col-lg-3 offset-sm-3 center">
+                    <div class="home-text2">
+                        The text leans towards the:<br> {{bias_prediction}}
+                    </div>
+                </div>
+        </div>
+            <input type="Submit">
+        </form>
+
+    </div>
 {% endblock %}

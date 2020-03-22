@@ -40,3 +40,8 @@ body, html {
     max-width: 700px;
     top: 150px;
 }
+
+.center {
+    padding: 150px 0;
+    text-align: center;
+}
