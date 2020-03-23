@@ -14,7 +14,7 @@ def detector():
     """Return bias detector page."""
 
     if 'bias_text' in request.form:
-        with open('bias_model.pkl', 'rb') as file:
+        with gzip.open('bias_model.pkl', 'rb') as file:
             bias_model = pickle.load(file)
         bias_text = request.form['bias_text']
         textbox = request.form['bias_text']
