@@ -2,14 +2,14 @@ from flask import Flask, render_template, request, redirect, url_for
 import pickle
 import os
 
-application = Flask(__name__)
+app = Flask(__name__)
 
-@application.route('/')
+@app.route('/')
 def index():
     """Return homepage."""
     return render_template('index.html')
 
-@application.route('/detector', methods=['GET', 'POST'])
+@app.route('/detector', methods=['GET', 'POST'])
 def detector():
     """Return bias detector page."""
 
@@ -25,11 +25,10 @@ def detector():
 
     return render_template('detector.html', bias_prediction=bias, textbox=textbox)
 
-@application.route('/about')
+@app.route('/about')
 def about():
     """Return about page."""
     return render_template('about.html')
-
 
 
 if __name__ == '__main__':
