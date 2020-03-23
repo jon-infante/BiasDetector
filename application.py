@@ -2,20 +2,20 @@ from flask import Flask, render_template, request, redirect, url_for
 import pickle
 import os
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route('/')
+@application.route('/')
 def index():
     """Return homepage."""
     return render_template('index.html')
 
-@app.route('/detector', methods=['GET', 'POST'])
+@application.route('/detector', methods=['GET', 'POST'])
 def detector():
     """Return bias detector page."""
-    with open('env/bias_model.pkl', 'rb') as file:
-        bias_model = pickle.load(file)
 
     if 'bias_text' in request.form:
+        with open('bias_model.pkl', 'rb') as file:
+            bias_model = pickle.load(file)
         bias_text = request.form['bias_text']
         textbox = request.form['bias_text']
         bias = bias_model.predict([bias_text])
@@ -25,7 +25,7 @@ def detector():
 
     return render_template('detector.html', bias_prediction=bias, textbox=textbox)
 
-@app.route('/about')
+@application.route('/about')
 def about():
     """Return about page."""
     return render_template('about.html')
@@ -33,4 +33,4 @@ def about():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))
+    application.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))

@@ -1,6 +1,9 @@
 # Created by https://www.gitignore.io/api/macos,python
 # Edit at https://www.gitignore.io/?templates=macos,python
 
+
+datasets
+
 ### macOS ###
 # General
 .DS_Store
@@ -139,3 +142,8 @@ dmypy.json
 .pyre/
 
 # End of https://www.gitignore.io/api/macos,python
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

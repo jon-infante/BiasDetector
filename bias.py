@@ -6,10 +6,15 @@ from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
 from sklearn.feature_selection import SelectKBest, chi2
 import pickle
+import random
 
+#Only using 10 percent of each dataframe
+p = 0.1
+df = pd.read_csv('datasets/cleaned_articles1.csv',header=None,skiprows=lambda i: 1>0 and random.random() > p)
+df2 = pd.read_csv('datasets/cleaned_articles2.csv',header=None,skiprows=lambda i: 1>0 and random.random() > p)
 
-df = pd.read_pickle('env/datasets/cleaned_articles1.pkl')
-df2 = pd.read_pickle('env/datasets/cleaned_articles2.pkl')
+df.columns = ['NaN', 'Unnamed', 'id', 'title', 'publication', 'author', 'date', 'year', 'month', 'url', 'content', 'cleaned']
+df2.columns = ['NaN', 'Unnamed', 'id', 'title', 'publication', 'author', 'date', 'year', 'month', 'url', 'content', 'cleaned']
 
 #First batch:
 n_s_breitbart = df[df.publication == 'Breitbart']
@@ -19,14 +24,8 @@ n_s_atlantic = df2[df2.publication == 'Atlantic']
 n_s_post = df2[df2.publication == 'New York Post']
 
 #Combining each of the articles into a list
-n_s = list(n_s_times.iloc[:,9].values) + list(n_s_atlantic.iloc[:,9].values) \
- + list(n_s_post.iloc[:,9].values) + list(n_s_breitbart.iloc[:,9].values)
-
-#Removing media names
-n_s = [word.replace('New York Times','') for word in n_s]
-n_s = [word.replace('Atlantic','') for word in n_s]
-n_s = [word.replace('New York Post','') for word in n_s]
-n_s = [word.replace('Breitbart','') for word in n_s]
+n_s = list(n_s_times.iloc[:,11].values) + list(n_s_atlantic.iloc[:,11].values) \
+ + list(n_s_post.iloc[:,11].values) + list(n_s_breitbart.iloc[:,11].values)
 
 #Adding biases for each media outlet, 1 for left 2 for right
 classes_Bias = np.asarray([1 for i in range(len(n_s_times))] + \
@@ -47,7 +46,7 @@ pipeline = Pipeline([('vect', TfidfVectorizer(ngram_range=(1, 2), stop_words="en
 bias_model = pipeline.fit(X_train, y_train)
 
 #Saving model into a file
-bias_model_file = "env/bias_model.pkl"
+bias_model_file = "bias_model.pkl"
 
 with open(bias_model_file, 'wb') as file:
     pickle.dump(bias_model, file)
