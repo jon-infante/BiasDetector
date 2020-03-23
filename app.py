@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import pickle
 import os
-import gzip
 
 app = Flask(__name__)
 
@@ -15,7 +14,7 @@ def detector():
     """Return bias detector page."""
 
     if 'bias_text' in request.form:
-        with gzip.open('bias_model.pkl', 'rb') as file:
+        with open('bias_model.pkl', 'rb') as file:
             bias_model = pickle.load(file)
         bias_text = request.form['bias_text']
         textbox = request.form['bias_text']
