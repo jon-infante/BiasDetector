@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import pickle
 import os
+from sklearn.externals import joblib
 
 app = Flask(__name__)
 
@@ -15,7 +16,7 @@ def detector():
 
     if 'bias_text' in request.form:
         with open('bias_model.pkl', 'rb') as file:
-            bias_model = pickle.load(file)
+            bias_model = joblib.load(file)
         bias_text = request.form['bias_text']
         textbox = request.form['bias_text']
         bias = bias_model.predict([bias_text])
