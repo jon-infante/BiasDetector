@@ -1,7 +1,0 @@
-#!/Users/jon/dev/courses/INT/biasdetector/virt/bin/python
-
-import sys
-
-if __name__ == "__main__":
-    from EB.builder.eb_main import main
-    sys.exit(main(sys.argv))
