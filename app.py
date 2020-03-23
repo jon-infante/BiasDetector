@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import pickle
 import os
-from sklearn.externals import joblib
+import joblib
 
 app = Flask(__name__)
 
