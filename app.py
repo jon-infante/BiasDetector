@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import pickle
 import os
+import gzip
 
 app = Flask(__name__)
 
