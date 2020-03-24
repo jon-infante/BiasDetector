@@ -7,11 +7,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_selection import SelectKBest, chi2
 import pickle
 import random
+import joblib
 
-#Only using 10 percent of each dataframe
-p = 0.1
-df = pd.read_csv('datasets/cleaned_articles1.csv',header=None,skiprows=lambda i: 1>0 and random.random() > p)
-df2 = pd.read_csv('datasets/cleaned_articles2.csv',header=None,skiprows=lambda i: 1>0 and random.random() > p)
+#Only using 5 percent of each dataframe
+p = 0.05
+df = pd.read_csv('env/datasets/cleaned_articles1.csv',header=None,skiprows=lambda i: 1>0 and random.random() > p)
+df2 = pd.read_csv('env/datasets/cleaned_articles2.csv',header=None,skiprows=lambda i: 1>0 and random.random() > p)
 
 df.columns = ['NaN', 'Unnamed', 'id', 'title', 'publication', 'author', 'date', 'year', 'month', 'url', 'content', 'cleaned']
 df2.columns = ['NaN', 'Unnamed', 'id', 'title', 'publication', 'author', 'date', 'year', 'month', 'url', 'content', 'cleaned']
@@ -49,7 +50,7 @@ bias_model = pipeline.fit(X_train, y_train)
 bias_model_file = "bias_model.pkl"
 
 with open(bias_model_file, 'wb') as file:
-    pickle.dump(bias_model, file)
+    joblib.dump(bias_model, file)
 
 # vectorizer = model.named_steps['vect']
 # chi = model.named_steps['chi']
