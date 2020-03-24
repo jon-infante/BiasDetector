@@ -13,6 +13,7 @@ def index():
     """Return homepage."""
     return render_template('index.html')
 
+
 @app.route('/detector', methods=['GET', 'POST'])
 def detector():
     """Return bias detector page."""
@@ -25,6 +26,7 @@ def detector():
     # bias_model = BytesIO(s3.Bucket("bias-detector").Object("bias_model.pkl").get()['Body'].read())
     # with open(bias_model, 'rb') as file:
     #     content = pickle.load(file)
+
     if 'bias_text' in request.form:
         bias_text = request.form['bias_text']
         textbox = request.form['bias_text']
@@ -32,6 +34,7 @@ def detector():
     else:
         bias = ''
         textbox = 'Your text here'
+
 
     return render_template('detector.html', bias_prediction=bias, textbox=textbox)
 
