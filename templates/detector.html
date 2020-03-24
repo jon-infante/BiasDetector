@@ -14,12 +14,24 @@
             </div>
                 <div class="col-lg-3 offset-sm-3 center">
                     <div class="home-text2">
-                        The text leans towards the:<br> {{bias_prediction}}
+                        The text leans towards the:<br>
+                        {% if bias_prediction == 1 %}
+                            <div style="color:blue">Left</div>
+                        {% elif bias_prediction == 2 %}
+                            <div style="color:red">Right</div>
+                        {% endif %}
                     </div>
                 </div>
         </div>
+        <script>
+            function clearText() {
+               document.getElementById("bias_text").value = "";
+            }
+       </script>
             <input type="Submit">
+            <input type="button" name="clear" value="Clear" onclick="clearText();">
         </form>
 
     </div>
+
 {% endblock %}
