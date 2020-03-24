@@ -2,7 +2,7 @@
 > Determines bias from an article or body of text.
 
 
-[![Build Status][travis-image]][travis-url]
+[![Build Status][travis-image]
 
 With all the elections that are going on now it is important to know where people's opinions overtake the actual facts. Knowing the difference between the two is imperative when deciding what candidate to select. This web app is going to show bias in a specific article or amount of text. I want to be able for people to upload or copy text to the site and show how much bias is within it. 
 
@@ -26,9 +26,8 @@ Say someone wants to participate in an upcoming election but doesn't have enough
 Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
 
 
-```$ pip freeze > requirements.txt
-   $ flask run
-```
+```$ pip freeze > requirements.txt```
+```$ flask run```
 
 ## Release History
 
