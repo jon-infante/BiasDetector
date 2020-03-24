@@ -6,8 +6,9 @@ from nltk.stem import SnowballStemmer
 
 df = pd.read_csv('env/datasets/articles1.csv')
 df2 = pd.read_csv('env/datasets/articles2.csv')
-
-words = stopwords.words("english")
+# Used to factor in repetitive words
+words = stopwords.words('english')
+# The process of breaking a word down to its root, prefixes and suffixes
 stemmer = SnowballStemmer('english')
 
 #Cleaning up article text to only alpha characters
