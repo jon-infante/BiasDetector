@@ -1,11 +1,12 @@
-# Product Name
-> Short blurb about what your product does.
+# Bias Detector
+> Determines bias from an article or body of text.
 
-[![NPM Version][npm-image]][npm-url]
+
 [![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
 
-One to two paragraph statement about your product and what it does.
+With all the elections that are going on now it is important to know where people's opinions overtake the actual facts. Knowing the difference between the two is imperative when deciding what candidate to select. This web app is going to show bias in a specific article or amount of text. I want to be able for people to upload or copy text to the site and show how much bias is within it. 
+
+Using NLP Machine Learning, the app determines if the text has a left or right leaning political bias.
 
 ![](header.png)
 
@@ -13,29 +14,20 @@ One to two paragraph statement about your product and what it does.
 
 OS X & Linux:
 
-```sh
-npm install my-crazy-module --save
-```
-
-Windows:
-
-```sh
-edit autoexec.bat
-```
+```$ git clone https://github.com/jon-infante/BiasDetector.git```
 
 ## Usage example
 
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
+Say someone wants to participate in an upcoming election but doesn't have enough understanding of all the news outlets, using this app will help get viewpoints from both sides.
 
-_For more examples and usage, please refer to the [Wiki][wiki]._
 
 ## Development setup
 
 Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
 
-```sh
-make install
-npm test
+
+```$ pip freeze > requirements.txt
+   $ flask run
 ```
 
 ## Release History
@@ -55,11 +47,7 @@ npm test
 
 ## Meta
 
-Your Name – [@YourTwitter](https://twitter.com/dbader_org) – YourEmail@example.com
-
-Distributed under the XYZ license. See ``LICENSE`` for more information.
-
-[https://github.com/yourname/github-link](https://github.com/dbader/)
+https://github.com/jon-infante/BiasDetector
 
 ## Contributing
 
@@ -74,5 +62,3 @@ Distributed under the XYZ license. See ``LICENSE`` for more information.
 [npm-url]: https://npmjs.org/package/datadog-metrics
 [npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/yourname/yourproject/wiki
