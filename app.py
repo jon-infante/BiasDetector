@@ -5,6 +5,9 @@ import joblib
 
 app = Flask(__name__)
 
+with open('bias_model.pkl', 'rb') as file:
+    bias_model = joblib.load(file)
+
 @app.route('/')
 def index():
     """Return homepage."""
@@ -23,9 +26,6 @@ def detector():
     # with open(bias_model, 'rb') as file:
     #     content = pickle.load(file)
     if 'bias_text' in request.form:
-        with open('bias_model.pkl', 'rb') as file:
-            bias_model = joblib.load(file)
-
         bias_text = request.form['bias_text']
         textbox = request.form['bias_text']
         bias = bias_model.predict([bias_text])
