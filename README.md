@@ -15,11 +15,6 @@ OS X & Linux:
 
 ```$ git clone https://github.com/jon-infante/BiasDetector.git```
 
-## Usage example
-
-Say someone wants to participate in an upcoming election but doesn't have enough understanding of all the news outlets, using this app will help get viewpoints from both sides.
-
-
 ## Development setup
 
 Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
