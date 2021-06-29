@@ -4,7 +4,7 @@
 
 ![Build Status][travis-image][![Website https://https://bias-detector.herokuapp.com/](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://bias-detector.herokuapp.com/)
 
-With all the elections that are going on now it is important to know where people's opinions overtake the actual facts. Knowing the difference between the two is imperative when deciding what candidate to select. This web app is going to show bias in a specific article or amount of text. I want to be able for people to upload or copy text to the site and show how much bias is within it. 
+With all the elections that are going on now it is important to know where people's opinions overtake the actual facts. Knowing the difference between the two is imperative when deciding what candidate to select.
 
 Using NLP Machine Learning, the app determines if the text has a left or right leaning political bias.
 
